@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\nrf52840_qiaa.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\nrf52840_qiaa.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Tue Apr 12 14:34:39 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Wed Apr 13 10:06:09 2022
 <BR><P>
 <H3>Maximum Stack Usage =        432 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -629,15 +629,15 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_config
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lfclk_config
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;log_init
+<LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sdc_handler
+<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_sdc_init
+<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_sdc_block_write
+<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_sdc_block_read
 <LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spi_handler
 <LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sdc_spi_transfer
 <LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sdc_pt_write
 <LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sdc_pt_read
 <LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sdc_pt_identification
-<LI><a href="#[39]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sdc_handler
-<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_sdc_init
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_sdc_block_write
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_sdc_block_read
 </UL>
 
 <P><STRONG><a name="[87]"></a>app_sdc_block_read</STRONG> (Thumb, 136 bytes, Stack size 32 bytes, app_sdcard.o(i.app_sdc_block_read))
@@ -687,8 +687,8 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_spim_uninit
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_cfg
 </UL>
-<BR>[Called By]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spi_handler
-<LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;block_dev_sdc_uninit
+<BR>[Called By]<UL><LI><a href="#[41]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;block_dev_sdc_uninit
+<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spi_handler
 </UL>
 
 <P><STRONG><a name="[91]"></a>app_util_critical_region_enter</STRONG> (Thumb, 10 bytes, Stack size 4 bytes, app_util_platform.o(i.app_util_critical_region_enter))
@@ -696,9 +696,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_util_disable_irq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_clock_lfclk_request
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
+<BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
 <LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ring_buffer_enter_critical
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_clock_lfclk_request
 <LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_prs_acquire
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_balloc_free
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_balloc_alloc
@@ -710,9 +710,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_util_enable_irq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_clock_lfclk_request
-<LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
+<BR>[Called By]<UL><LI><a href="#[80]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_log_frontend_dequeue
 <LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ring_buffer_exit_critical
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_clock_lfclk_request
 <LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_prs_acquire
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_balloc_free
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_balloc_alloc
@@ -937,9 +937,9 @@ Global Symbols
 <P><STRONG><a name="[dc]"></a>lfclk_config</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, rtc.o(i.lfclk_config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 296<LI>Call Chain = lfclk_config &rArr; app_error_handler_bare &rArr; app_error_fault_handler &rArr; nrf_log_frontend_std_0 &rArr; std_n &rArr; nrf_log_frontend_dequeue &rArr;  nrf_log_frontend_std_0 (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_clock_lfclk_request
+<BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler_bare
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_clock_lfclk_request
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_clock_init
-<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler_bare
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1398,12 +1398,12 @@ Global Symbols
 <P><STRONG><a name="[fe]"></a>nrfx_spim_init</STRONG> (Thumb, 444 bytes, Stack size 64 bytes, nrfx_spim.o(i.nrfx_spim_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = nrfx_spim_init &rArr; nrf_gpio_cfg_output &rArr; nrf_gpio_cfg
 </UL>
-<BR>[Calls]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_get_irq_number
+<BR>[Calls]<UL><LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_prs_acquire
+<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_get_irq_number
 <LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_pin_set
 <LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_pin_clear
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_cfg_output
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_cfg
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_prs_acquire
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_drv_spi_init
 </UL>
@@ -1411,12 +1411,12 @@ Global Symbols
 <P><STRONG><a name="[90]"></a>nrfx_spim_uninit</STRONG> (Thumb, 194 bytes, Stack size 32 bytes, nrfx_spim.o(i.nrfx_spim_uninit))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = nrfx_spim_uninit &rArr; nrf_gpio_cfg
 </UL>
-<BR>[Calls]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_get_irq_number
+<BR>[Calls]<UL><LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_prs_release
+<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_get_irq_number
 <LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_spim_task_trigger
 <LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_spim_int_disable
 <LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_spim_event_check
 <LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_cfg
-<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_prs_release
 </UL>
 <BR>[Called By]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_sdc_uninit
 </UL>
@@ -1504,11 +1504,11 @@ Global Symbols
 <P><STRONG><a name="[e5]"></a>rtc_config</STRONG> (Thumb, 92 bytes, Stack size 24 bytes, rtc.o(i.rtc_config))
 <BR><BR>[Stack]<UL><LI>Max Depth = 304<LI>Call Chain = rtc_config &rArr; app_error_handler_bare &rArr; app_error_fault_handler &rArr; nrf_log_frontend_std_0 &rArr; std_n &rArr; nrf_log_frontend_dequeue &rArr;  nrf_log_frontend_std_0 (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_rtc_overflow_enable
+<BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler_bare
+<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_rtc_overflow_enable
 <LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_rtc_init
 <LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_rtc_enable
 <LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_rtc_task_trigger
-<LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler_bare
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1567,8 +1567,8 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[139]"></a>nrf_rtc_task_trigger</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, rtc.o(i.nrf_rtc_task_trigger))
-<BR><BR>[Called By]<UL><LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_handler
-<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_config
+<BR><BR>[Called By]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_config
+<LI><a href="#[3f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rtc_handler
 </UL>
 
 <P><STRONG><a name="[3f]"></a>rtc_handler</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, rtc.o(i.rtc_handler))
@@ -2028,9 +2028,9 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_pin_port_decode
 </UL>
-<BR>[Called By]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_cfg_output
-<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_spim_init
+<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_spim_init
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_spim_uninit
+<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_cfg_output
 </UL>
 
 <P><STRONG><a name="[108]"></a>nrf_gpio_cfg_output</STRONG> (Thumb, 24 bytes, Stack size 16 bytes, nrfx_spim.o(i.nrf_gpio_cfg_output))
@@ -2046,10 +2046,10 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_pin_port_decode
 </UL>
-<BR>[Called By]<UL><LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spim_xfer
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;finish_transfer
-<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_spim_init
+<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_spim_init
 <LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_spim_xfer
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spim_xfer
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;finish_transfer
 </UL>
 
 <P><STRONG><a name="[104]"></a>nrf_gpio_pin_port_decode</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, nrfx_spim.o(i.nrf_gpio_pin_port_decode))
@@ -2063,16 +2063,16 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_pin_port_decode
 </UL>
-<BR>[Called By]<UL><LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spim_xfer
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;finish_transfer
-<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_spim_init
+<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_spim_init
 <LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_spim_xfer
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spim_xfer
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;finish_transfer
 </UL>
 
 <P><STRONG><a name="[d5]"></a>nrf_spim_event_check</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, nrfx_spim.o(i.nrf_spim_event_check))
-<BR><BR>[Called By]<UL><LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spim_xfer
+<BR><BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_spim_uninit
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spim_xfer
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;irq_handler
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_spim_uninit
 </UL>
 
 <P><STRONG><a name="[d6]"></a>nrf_spim_event_clear</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, nrfx_spim.o(i.nrf_spim_event_clear))
@@ -2083,13 +2083,13 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[12d]"></a>nrf_spim_int_disable</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, nrfx_spim.o(i.nrf_spim_int_disable))
-<BR><BR>[Called By]<UL><LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spim_xfer
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_spim_uninit
+<BR><BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_spim_uninit
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spim_xfer
 </UL>
 
 <P><STRONG><a name="[12e]"></a>nrf_spim_task_trigger</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, nrfx_spim.o(i.nrf_spim_task_trigger))
-<BR><BR>[Called By]<UL><LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spim_xfer
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_spim_uninit
+<BR><BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_spim_uninit
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spim_xfer
 </UL>
 
 <P><STRONG><a name="[12c]"></a>nrfx_get_irq_number</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, nrfx_spim.o(i.nrfx_get_irq_number))
@@ -2287,8 +2287,8 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrfx_spim_xfer
 </UL>
-<BR>[Called By]<UL><LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sdc_spi_transfer
-<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_sdc_init
+<BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_sdc_init
+<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sdc_spi_transfer
 </UL>
 
 <P><STRONG><a name="[8b]"></a>nrf_gpio_cfg</STRONG> (Thumb, 52 bytes, Stack size 48 bytes, app_sdcard.o(i.nrf_gpio_cfg))
@@ -2311,8 +2311,8 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_pin_port_decode
 </UL>
-<BR>[Called By]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spi_handler
-<LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_sdc_init
+<BR>[Called By]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_sdc_init
+<LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spi_handler
 </UL>
 
 <P><STRONG><a name="[13e]"></a>sdc_calculate_size</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, app_sdcard.o(i.sdc_calculate_size))
@@ -2326,11 +2326,11 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sdc_spi_transfer
 </UL>
-<BR>[Called By]<UL><LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sdc_pt_write
+<BR>[Called By]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_sdc_block_write
+<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_sdc_block_read
+<LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sdc_pt_write
 <LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sdc_pt_read
 <LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sdc_pt_identification
-<LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_sdc_block_write
-<LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_sdc_block_read
 </UL>
 
 <P><STRONG><a name="[13c]"></a>sdc_pt_identification</STRONG> (Thumb, 1256 bytes, Stack size 48 bytes, app_sdcard.o(i.sdc_pt_identification))
@@ -2390,12 +2390,12 @@ Local Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 432<LI>Call Chain = spi_handler &rArr; sdc_pt_identification &rArr; sdc_pt_sub_data_read &rArr; sdc_spi_transfer &rArr; app_error_handler_bare &rArr; app_error_fault_handler &rArr; nrf_log_frontend_std_0 &rArr; std_n &rArr; nrf_log_frontend_dequeue &rArr;  nrf_log_frontend_std_0 (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_error_handler_bare
+<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_sdc_uninit
 <LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sdc_spi_transfer
 <LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sdc_pt_write
 <LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sdc_pt_read
 <LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sdc_pt_identification
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;nrf_gpio_pin_set
-<LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;app_sdc_uninit
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> app_sdcard.o(i.app_sdc_init)
 </UL>
